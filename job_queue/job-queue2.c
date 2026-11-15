@@ -9,6 +9,8 @@ struct job
 
   int job_id;
 
+  int job_proccess_time
+
   /* Other fields describing work to be done... */
 };
 
@@ -19,7 +21,7 @@ void process_job(struct job *j, int thread_id)
 {
   printf("thread %d: start proccessing job: %d \n", thread_id, j->job_id);
 
-  sleep(3);
+  sleep(j->job_proccess_time);
 
   printf("finished job: %d \n", j->job_id);
 
@@ -74,12 +76,15 @@ int main(int argv, char *argc[])
 
   struct job *prev_job = malloc(sizeof(struct job));
   prev_job->job_id = 0;
+  prev_job->job_proccess_time = 1;
+
   job_queue = prev_job;
 
   for (size_t i = 1; i < jobs_count; i++)
   {
     struct job *curr_job = malloc(sizeof(struct job));
     curr_job->job_id = i;
+    curr_job->job_proccess_time = 1;
     prev_job->next = curr_job;
     prev_job = curr_job;
   }
