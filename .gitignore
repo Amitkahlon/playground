@@ -1,3 +1,18 @@
+# Extensionless executables (e.g. gcc -o main main.c), in any subfolder:
+# ignore every file without an extension, then re-allow directories
+# and known extensionless source files.
+*
+!*.*
+!*/
+!Makefile
+!makefile
+!GNUmakefile
+!Kbuild
+!Kconfig
+!Dockerfile
+!README
+!LICENSE
+
 # Prerequisites
 *.d
 
