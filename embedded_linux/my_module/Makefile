@@ -1,6 +1,6 @@
 ARCH := arm64
 CROSS_COMPILE := /home/amit/Desktop/refael/rpi-buildroot-2026.08/output/host/bin/aarch64-linux-
-obj-m := mymodule.o
+obj-m := my_module.o
 ROOTDIR := ~/Desktop/refael/rpi-buildroot-2026.08/output/build/linux-custom
 PWD := $(shell pwd)
 
